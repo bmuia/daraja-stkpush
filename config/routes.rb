@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :donates
   root "home#index"
   get '/pay_with_card', to: 'home#pay_with_card'
+  get '/error_404',to: 'home#error_404'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

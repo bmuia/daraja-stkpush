@@ -293,3 +293,9 @@ img {
         flex-direction: column;
     }
 }
+
+
+.error{
+    height: 100vh;
+    background-image: url("https://media.gettyimages.com/id/1359544016/vector/404-error-program-error-web-page-cannot-be-opened.jpg?s=612x612&w=0&k=20&c=kSLw1lRBG__vjwURrno8iE2jWDgqrvrP8fi1WPkYu3g=");
+}

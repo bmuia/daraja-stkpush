@@ -4,6 +4,9 @@ class HomeController < ApplicationController
     end
 
     def pay_with_card
-       
-      end
+    end
+
+    def error_404
+    end
+    
 end

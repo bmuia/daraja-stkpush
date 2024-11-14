@@ -6,9 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const payWithCardButton = document.querySelector(".pay-with-card");
 
-    payWithCardButton.addEventListener("click", function(){
-        window.location.href = "/pay_with_card";
-    })
+    if (payWithCardButton) {
+        payWithCardButton.addEventListener("click", function() {
+            window.location.href = "/pay_with_card";
+        });
+    } else {
+        window.location.href="/error_404"
+    }
+
 
     // 1. Select all "Donate" buttons
     const donateButtons = document.querySelectorAll(".donate-button");
