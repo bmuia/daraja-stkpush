@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Please support us <b class="heart">❤️</b></h1>
+
+  <% if @donates.present? %>
+    <div class="donation-cards-container">
+      <% @donates.each do |donate| %>
+        <div class="donation-card">
+          <h2><%= donate.title %></h2>
+          <p><%= donate.description %></p>
+          <p>ksh.<%= donate.amount %>0</p>
+          <button class="donate-button" data-donate-id="<%= donate.id %>">Donate</button>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No donation tiers available at the moment.</p>
+  <% end %>
+
+  <div class="open-box">
+    <div class="options">
+      <div class="close">
+        <i class='bx bxs-x-circle'></i>
+      </div>
+      <button>Pay with mpesa</button>
+      <button class="pay-with-card">Pay with card</button>
+    </div>
+  </div>
+</div>

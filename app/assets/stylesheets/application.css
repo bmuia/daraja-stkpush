@@ -1,15 +1,295 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Kode+Mono:wght@400..700&display=swap');
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #9B7EBD;
+    font-family: "Kode Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.heart {
+    color: red;
+    font-size: 1.8em;
+}
+
+.donation-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.donation-card {
+    background-color: #fff;
+    color: #000;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.donation-card h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.donation-card p {
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.donation-card p:last-child {
+    font-weight: bold;
+    color: #2ecc71;
+    font-size: 1.2rem;
+}
+
+.donate-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donate-button:hover {
+    background-color: #e04e2e;
+    transform: translateY(-3px);
+}
+
+.open-box {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.open-box.show {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close i {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.close i:hover {
+    transform: translateY(-3px);
+    transition: 0.3s ease-in-out;
+}
+
+.options {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.options button {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff5733;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.options button:hover {
+    background-color: #e04e2e;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+
+    .container{
+        height: auto;
+    }
+
+    .donation-cards-container{
+        display: block;
+    }
+
+
+    .donation-card {
+        width: 90%;
+        margin: 20px;
+    }
+
+    .options {
+        width: 80%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.payment-container {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.payment-container h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    min-width: 300px;
+}
+
+.inputBox {
+    margin-bottom: 1rem;
+}
+
+.inputBox label {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.inputBox input,
+.inputBox select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.inputBox input:focus,
+.inputBox select:focus {
+    border-color: #9B7EBD;
+    box-shadow: 0 0 5px rgba(155, 126, 189, 0.2);
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+img {
+    width: 100%;
+    max-width: 120px;
+    margin-top: 5px;
+}
+
+.title {
+    color: #9B7EBD;
+    font-weight: bold;
+}
+
+.submit_btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #9B7EBD;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.submit_btn:hover {
+    background: #8568a8;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+}
